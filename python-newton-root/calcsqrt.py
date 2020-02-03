@@ -8,6 +8,13 @@ def sqrt(x):
     Calculate the square root of argument x
     """
 
+    # Check that x is positive 
+    if x < 0:
+        print("Error negative value supplied")
+        return -1
+    else:
+        print("Here we go..")
+
     # Initial guess for the square root
     z = x / 2.0
 
