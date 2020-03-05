@@ -6,6 +6,7 @@ import re
 
 text = open("LoremIpsum.txt", "r")
 
+
 # Debug to test file open+read
 # print(text.read())
 
@@ -14,6 +15,7 @@ for line in text:
     line = line.rstrip()
     if re.search('^A.+$', line):
         print(line)
+    
 
-
+# print(textSearch[1:4])
 # References - https://youtu.be/e0xL9o5VibU - Max Goodridge
