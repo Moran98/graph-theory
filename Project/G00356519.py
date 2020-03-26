@@ -5,5 +5,18 @@
 
 class Account:
     def __init__(self):
-        print("============GraphTheory============")
-        print("(Aaron Moran - G00356519)")
+        print("===============GraphTheory===============")
+        print("|\t(Aaron Moran - G00356519)\t|")
+        print("=========================================")
+
+class Fragment:
+    # Start and accept states
+    def __init__(self, start, accept):
+        self.start=start
+        self.accept=accept
+
+class State:
+    # Constructor for the class
+    def __init__(self, label = None, edges = []):
+        self.edges = edges
+        self.label = label
