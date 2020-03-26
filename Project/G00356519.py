@@ -3,6 +3,7 @@
 # Create using Python a program which will carry out the Thompsons Construction
 # method on a Regular Expression to a NFA (Non-Deterministic Finite Automata).
 
+
 class Account:
     def __init__(self):
         print("===============GraphTheory===============")
@@ -10,7 +11,7 @@ class Account:
         print("=========================================")
 
 class Fragment:
-    # Start and accept states
+    # Start and accept states Constructor
     def __init__(self, start, accept):
         self.start=start
         self.accept=accept
