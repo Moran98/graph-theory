@@ -5,6 +5,7 @@
 
 
 class Account:
+    # Used to display header for project.
     def __init__(self):
         print("===============GraphTheory===============")
         print("|\t(Aaron Moran - G00356519)\t|")
@@ -17,7 +18,9 @@ class Fragment:
         self.accept=accept
 
 class State:
-    # Constructor for the class
-    def __init__(self, label = None, edges = []):
-        self.edges = edges
-        self.label = label
+  # Constructor. Fix supplied by Dr. Ian McLoughlin
+  def __init__(self, label=None, edges=None):
+    # Every state has 0, 1, or 2 edges from it.
+    self.edges = edges if edges else []
+    # Label for the arrows. None means epsilon.
+    self.label = label

@@ -7,7 +7,7 @@ def shunt(infix):
     opers = [] # Operator stack
     postfix = [] # Output list
 
-    # Operator precidence * - . - |
+    # Operator precidence 
     prec = {'*': 100, '.': 80, '|': 60, ')': 40, '(': 20}
 
     # Loop through the input one character at a time
@@ -52,8 +52,7 @@ def compile(infix):
     # Convert to list
     postfix = list(postfix)[::-1]
     print(postfix)
-    # Empty nfa stack list
-    nfa_stack = []
+    nfa_stack = [] # Empty nfa stack list
 
     while postfix:
         # Pop a character from postfix
@@ -106,8 +105,8 @@ def compile(infix):
             newfrag = Fragment(frag.start, frag.accept)
             print("Created fragment with '+' operator : ", newfrag)
         
-        # elif c == '?':
-
+        elif c == '?':
+            print("Created fragment with '?' operator : ")
 
         else:
             accept = State()
