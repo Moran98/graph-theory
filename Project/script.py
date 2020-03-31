@@ -1,5 +1,26 @@
 from G00356519 import *
 
+def Prompt():
+    # Prompt user to enter infix and string to match
+    user_input = input("Enter an infix :")
+    string_match = input("Enter a string to match :")
+    print("The match was : ", match(user_input, string_match))
+
+def MenuOption():
+    # Prompt another test for the user
+    print("===============GraphTheory===============")
+    x = input("Would you like to Test another? [y/n]")
+
+    # While loop to trigger menu options to test another or not - ignores case
+    while x.casefold() not in 'n':
+        user_input = input("Enter an infix :")
+        string_match = input("Enter a string to match :")
+        print("The match was : ", match(user_input, string_match))
+        print("===============GraphTheory===============")
+        x = input("Would you like to Test another? [y/n]")
+
+    print("Exiting Program...")
+
 def shunt(infix):
     print("The infix is : ", infix)
     infix = list(infix)[::-1]
@@ -106,7 +127,14 @@ def compile(infix):
             print("Created fragment with '+' operator : ", newfrag)
         
         elif c == '?':
-            print("Created fragment with '?' operator : ")
+            # Pop off the stack
+            frag = nfa_stack.pop()
+            accept= State()
+            start = State(edges=[frag.start, frag.accept])
+            frag.accept.edges.append(accept)
+            # Create new instance of the fragment
+            newfrag = Fragment(frag.start, frag.accept)
+            print("Created fragment with '?' operator : ", newfrag)
 
         else:
             accept = State()
@@ -168,6 +196,7 @@ def match(regex, s):
 
 #Calling for header and user input to test matching
 g00 =  Account()
-user_input = input("Enter an infix :")
-string_match = input("Enter a string to match :")
-print("The match was : ", match(user_input, string_match))
+# Prompt user for infix input
+Prompt()
+# Menu option to prompt user to test another infix or to exit the program
+MenuOption()
