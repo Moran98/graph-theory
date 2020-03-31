@@ -14,6 +14,14 @@ cd Project
 python script.py
 ```
 
+## Research
+You can view my research and documentation again within the Project folder under the folder 'docs'. I have written my documentation up by using Jupyter Notebook which i also learned a lot about in the finalisation of this project.
+
+```
+cd Project/doc's
+```
+
+
 ## Built With
 * [vim](https://www.vim.org/) - IDE
 * [VS Code](https://code.visualstudio.com/) - IDE
