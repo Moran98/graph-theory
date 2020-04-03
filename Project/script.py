@@ -29,7 +29,7 @@ def shunt(infix):
     postfix = [] # Output list
 
     # Operator precidence 
-    prec = {'*': 100, '.': 80, '|': 60, ')': 40, '(': 20}
+    prec = {'*': 100, '?':80, '+': 60, '.':40,  '|': 20, ')': 10, '(': 0}
 
     # Loop through the input one character at a time
     while infix:
