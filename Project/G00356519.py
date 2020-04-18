@@ -2,6 +2,15 @@
 # Graph Theory Project
 # Create using Python a program which will carry out the Thompsons Construction
 # method on a Regular Expression to a NFA (Non-Deterministic Finite Automata).
+import argparse
+
+# Help argparse arguments and commands
+# list of commands are as follows :
+# ['-h', '--help' , '-i' , '--instructions' , '-r' , '--run' ]
+parser = argparse.ArgumentParser(description="GRAPH THEORY 2020 - Aaron Moran (G00356519)")
+parser.add_argument('-i', '--instructions', help="To run and begin the program go to use the command 'cd Project' and run the command 'python3 script.py'.")
+parser.add_argument('-r', '--run', help="If you wish to run the program please use the command 'python3 script.py'.")
+args = parser.parse_args()
 
 
 class Account:

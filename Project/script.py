@@ -1,5 +1,6 @@
 from G00356519 import *
 
+
 def Prompt():
     # Prompt user to enter infix and string to match
     user_input = input("Enter an infix :")
@@ -8,6 +9,7 @@ def Prompt():
 
 def MenuOption():
     # Prompt another test for the user
+
     print("===============GraphTheory===============")
     x = input("Would you like to Test another? [y/n]")
 
