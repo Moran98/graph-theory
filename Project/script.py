@@ -1,5 +1,5 @@
 from G00356519 import *
-
+import argparse
 
 def Prompt():
     # Prompt user to enter infix and string to match
@@ -196,6 +196,30 @@ def match(regex, s):
     # Ask the NFA if it matches the string s
     return nfa.accept in current
 
+# Help argparse arguments and commands
+# list of commands are as follows :
+# ['-h', '--help']
+def arguments():
+    parser = argparse.ArgumentParser(description="GRAPH THEORY 2020 - Aaron Moran (G00356519)")
+    # to test the program from the command line pass in the following infix and string to match when running the command
+    parser.add_argument("infix", help="The infix you wish to test.")
+    parser.add_argument("string", help="The String you wish to match.")
+    args = parser.parse_args()
+
+    # pass to match, display if successful or unsuccessful
+    if(match(args.infix, args.string)):
+        print("====================")
+        print("|You found a match!|")
+        print("====================\n")
+    else:
+        print("=====================")
+        print("|No matches found...|")
+        print("=====================\n")
+
+
+
+# command line arguments call
+arguments()
 #Calling for header and user input to test matching
 g00 =  Account()
 # Prompt user for infix input
