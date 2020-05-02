@@ -27,7 +27,7 @@ Below we are looping through the characters input for String. We are keeping tra
                 if state.label == c:
                     followes(state.edges[0], current)
 
-#####_Conclusion_
+##### _Conclusion_
 Our matching function is the final step for the program. Once performed correctly we can determine if there was a successful match or not.
 
 ## Compiling
@@ -63,15 +63,15 @@ Within our Shunting function we initially start by removing any round bracket pa
 
 We are then appending any popped operators from the input to the operator stack. We are doing this because we wish to get a matching string and any output with operators still remaining inside will not be a successful match. Any remaining characters are appended to the output list.
 
->     elif c in prec:
-            while opers and  prec[c] < prec[opers[-1]]:
-                postfix.append(opers.pop())
-            opers.append(c)
-        else:
-            postfix.append(c)
+>   elif c in prec:
+        while opers and  prec[c] < prec[opers[-1]]:
+            postfix.append(opers.pop())
+        opers.append(c)
+    else:
+        postfix.append(c)
 
 
-#####_Conclusion_
+##### _Conclusion_
 
 Our shunting method is essential for adding and removing unwanted elements from the infix to achieve a matching String. Any mistakes while shunting can provide an incorrect output so it is necessary to have precise accuracy while shunting.
 
@@ -95,7 +95,7 @@ You will then see that i have assigned 2 positional arguments (infix , String)  
 
 >   if(match(args.infix, args.string))
 
-#####_Conclusion_
+##### _Conclusion_
 
 By adding argparse to your project it adds more functionality and usability for the user. For such a basic implementation it is absolutely worthwhile to achieve this functionality.
 
@@ -106,7 +106,7 @@ This section is self explanatory , I have coded a command line UI which the user
 
 Below is the Menu UI from from source code :
 
->     while x.casefold() not in 'n':
+>   while x.casefold() not in 'n':
         user_input = input("Enter an infix :")
         string_match = input("Enter a string to match :")
         print("The match was : ", match(user_input, string_match))

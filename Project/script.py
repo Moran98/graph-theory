@@ -195,20 +195,7 @@ def match(regex, s):
     
     # Ask the NFA if it matches the string s
     return nfa.accept in current
-
-
-if __name__ == "__main__":
-    tests = [
-        ["a.b|b*", "bbbbbb", True],
-        ["a.b|b*", "bbx", False],
-        ["a.b", "ab", True],
-        # ["b**", "b", True],
-        # ["b*", "", True]
-    ]
-
-    for test in tests:
-        assert match(test[0], test[1]) == test[2], test[0] + (" should match " if test[2] else " should not match ") + test[1]
-        Prompt()
+        
 
 # Help argparse arguments and commands
 # list of commands are as follows :
@@ -230,6 +217,52 @@ def arguments():
         print("|No matches found...|")
         print("=====================\n")
 
+# TESTS
+if __name__ == "__main__":
+    tests = [
+        ["a.b|b*", "bbx", False],
+        ["a.b", "ab", True],
+        ["a.b", "ba", False],
+        ["b?", "b", True],
+        ["b?", "bbbb", False],
+        ["b**", "b", True],
+        ["b**", "ab", False],
+        ["b*", "bbb", True],
+        ["b+a*", "aaa", True],
+        ["b+a*", "aab", False],
+        
+        ["c*", "ccc", True],
+        ["c.b", "cb", True],
+        ["c.b", "cbcbbb", False],
+        ["c?", "c", True],
+        ["c?", "ccc", False],
+        ["c.b|b*", "ccbccbcc", False],
+        ["c.a|a*", "aaaaaa", False],
+        ["c**", "c", True],
+        ["c**", "cb", False],
+        ["c*", "cccccc", True],
+
+        ["x.y", "xy", True],
+        ["x.y", "xxxx", False],
+        ["x.y|y", "xyxyxy", False],
+        ["x.y|y*", "y", False],
+        ["x?", "x", True],
+        ["x**", "x", True],
+        ["x**", "xyx", False],
+        ["x*", "xxxxxxx", True],
+        ["x+y", "xy", False],
+        ["x+y", "y", True]
+    ]
+
+    for test in tests:
+        print("----------------------------------------------------------------------------------")
+        print("\nTest ", test, ")")
+        assert match(test[0], test[1]) == test[2], test[0] + (" should match " if test[2] else " should not match ") + test[1]
+        if(match(test[0], test[1])):
+            print("SUCCESSFUL MATCH.")
+        else:
+            print("UNSUCCESSFUL MATCH.")
+        
 
 # command line arguments call
 arguments()
