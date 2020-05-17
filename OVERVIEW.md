@@ -63,12 +63,14 @@ Within our Shunting function we initially start by removing any round bracket pa
 
 We are then appending any popped operators from the input to the operator stack. We are doing this because we wish to get a matching string and any output with operators still remaining inside will not be a successful match. Any remaining characters are appended to the output list.
 
->   elif c in prec:
+>  
+      
+      elif c in prec:
         while opers and  prec[c] < prec[opers[-1]]:
-            postfix.append(opers.pop())
-        opers.append(c)
-    else:
-        postfix.append(c)
+             postfix.append(opers.pop())
+         opers.append(c)
+      else:
+          postfix.append(c)
 
 
 ##### _Conclusion_
@@ -106,10 +108,12 @@ This section is self explanatory , I have coded a command line UI which the user
 
 Below is the Menu UI from from source code :
 
->   while x.casefold() not in 'n':
-        user_input = input("Enter an infix :")
-        string_match = input("Enter a string to match :")
-        print("The match was : ", match(user_input, string_match))
-        print("===============GraphTheory===============")
-        x = input("Would you like to Test another? [y/n]")
-    print("Exiting Program...")
+>  
+
+       while x.casefold() not in 'n':
+           user_input = input("Enter an infix :")
+           string_match = input("Enter a string to match :")
+           print("The match was : ", match(user_input, string_match))
+           print("===============GraphTheory===============")
+           x = input("Would you like to Test another? [y/n]")
+       print("Exiting Program...")
