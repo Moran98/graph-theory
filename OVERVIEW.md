@@ -28,6 +28,21 @@ Within this repository there is many functions which I will go into detail about
 * Command line arguments.
 * Menu Options & User Prompt
 
+## Regular Expressions
+
+Regular Expressions are a sequence of characters that define a search pattern which when implemented in programming can display specific strings from a bulk of text (e.g email addresses). It's main purpose is to find text within a file and is usually built in to every text editor!
+
+My Regex examples (GitHub)
+#### Basic RegEx
+
+    ' ^ ' - The beginning of a line.
+    ' . ' - Any character.
+    ' | ' - The OR operator.
+    ' ? ' - Matches the character before the '?' (zero OR one).
+    ' + ' - Matches character before '+' (one OR more).
+    ' * ' - Matches everyhting in place of the Kleene Star.
+
+
 ## Matching
 Within this function we are testing to see if the input Infix will match the input String. The match function receives 2 arguments, and will return true if we get a successful match.
 
